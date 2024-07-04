@@ -15,7 +15,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<Accordion maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="673.0" prefWidth="584.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+<Accordion maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="673.0" prefWidth="584.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.sistemataller.HelloController">
   <panes>
     <TitledPane contentDisplay="CENTER" text="Registrar empleado">
          <content>
@@ -29,35 +29,42 @@
                         <Insets bottom="2.5" />
                      </VBox.margin>
                   </Label>
-                  <VBox prefHeight="200.0" prefWidth="100.0" spacing="10.0" VBox.vgrow="ALWAYS">
+                  <VBox prefHeight="169.0" prefWidth="558.0" spacing="10.0" VBox.vgrow="ALWAYS">
                      <children>
                         <Label text="Nombre" />
-                        <TextField prefHeight="26.0" prefWidth="623.0" VBox.vgrow="ALWAYS" />
+                        <TextField fx:id="tfNombreEmp" prefHeight="26.0" prefWidth="623.0" VBox.vgrow="ALWAYS" />
                      </children>
                   </VBox>
-                  <VBox prefHeight="200.0" prefWidth="100.0" spacing="10.0" VBox.vgrow="ALWAYS">
+                  <VBox prefHeight="157.0" prefWidth="558.0" spacing="10.0" VBox.vgrow="ALWAYS">
                      <children>
                         <Label text="Apellido" />
-                        <TextField />
+                        <TextField fx:id="tfApellidoEmp" />
                      </children>
                   </VBox>
-                  <VBox prefHeight="200.0" prefWidth="100.0" spacing="10.0" VBox.vgrow="ALWAYS">
+                  <VBox prefHeight="147.0" prefWidth="558.0" spacing="10.0" VBox.vgrow="ALWAYS">
                      <children>
                         <Label text="Fecha de contratacion" />
-                        <DatePicker VBox.vgrow="ALWAYS" />
+                        <DatePicker fx:id="dpFechaContEmp" VBox.vgrow="ALWAYS" />
                      </children>
                   </VBox>
-                  <Button mnemonicParsing="false" text="Agregar empleado">
-                     <padding>
-                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-                     </padding>
-                     <font>
-                        <Font name="Ubuntu" size="14.0" />
-                     </font>
-                     <VBox.margin>
-                        <Insets top="2.5" />
-                     </VBox.margin>
-                  </Button>
+                  <Label fx:id="lblEmpAgregado" />
+                  <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="10.0" VBox.vgrow="ALWAYS">
+                     <children>
+                        <Button fx:id="btnAgregarEmp" mnemonicParsing="false" onAction="#setBtnAgregarEmpleado" text="Agregar empleado">
+                           <padding>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </padding>
+                           <font>
+                              <Font name="Ubuntu" size="14.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="btnLimpiarEmp" mnemonicParsing="false" onAction="#setBtnLimpiarEmp" text="Limpiar">
+                           <padding>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </padding>
+                        </Button>
+                     </children>
+                  </HBox>
                </children></VBox>
          </content>
          <font>
@@ -79,44 +86,50 @@
                   <VBox prefHeight="200.0" prefWidth="100.0" spacing="10.0" VBox.vgrow="ALWAYS">
                      <children>
                         <Label text="Elige la categoria de la tarea" />
-                        <ComboBox prefWidth="150.0" promptText="Categoria" />
+                        <ComboBox fx:id="cbCategoriaAddTarea" prefWidth="150.0" promptText="Categoria" />
                      </children>
                   </VBox>
                   <VBox prefHeight="200.0" prefWidth="100.0" spacing="10.0" VBox.vgrow="ALWAYS">
                      <children>
                         <Label text="Descrpcion" />
-                        <TextArea prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS" />
+                        <TextArea fx:id="txtDescp" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS" />
                      </children>
                   </VBox>
                   <VBox prefHeight="200.0" prefWidth="100.0" spacing="10.0" VBox.vgrow="ALWAYS">
                      <children>
                         <Label text="Precio" />
-                        <TextField />
+                        <TextField fx:id="txtPrecio" />
                      </children>
                   </VBox>
                   <VBox prefHeight="200.0" prefWidth="100.0" spacing="10.0" VBox.vgrow="ALWAYS">
                      <children>
                         <Label text="Asignar empleado" />
-                        <ComboBox prefWidth="150.0" promptText="Empleado" />
+                        <ComboBox fx:id="cbAsignarEmpTarea" prefWidth="150.0" promptText="Empleado" />
                      </children>
                   </VBox>
                   <VBox prefHeight="200.0" prefWidth="100.0" spacing="10.0" VBox.vgrow="ALWAYS">
                      <children>
                         <Label text="Fecha de asignacion" />
-                        <DatePicker prefWidth="214.0" VBox.vgrow="ALWAYS" />
+                        <DatePicker fx:id="dtFechaAsignTarea" prefWidth="214.0" VBox.vgrow="ALWAYS" />
                      </children>
                   </VBox>
-                  <Button mnemonicParsing="false" text="Agregar tarea">
-                     <padding>
-                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-                     </padding>
-                     <font>
-                        <Font name="Ubuntu" size="14.0" />
-                     </font>
-                     <VBox.margin>
-                        <Insets top="2.5" />
-                     </VBox.margin>
-                  </Button>
+                  <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+                     <children>
+                        <Button fx:id="btnAgregarTarea" mnemonicParsing="false" text="Agregar tarea">
+                           <padding>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </padding>
+                           <font>
+                              <Font name="Ubuntu" size="14.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="btnLimpiarTarea" mnemonicParsing="false" text="Limpiar">
+                           <padding>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </padding>
+                        </Button>
+                     </children>
+                  </HBox>
                </children>
             </VBox>
          </content>
@@ -158,27 +171,33 @@
                         </VBox>
                      </children>
                   </HBox>
-                  <TableView prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+                  <TableView prefHeight="287.0" prefWidth="558.0" VBox.vgrow="ALWAYS">
                     <columns>
-                      <TableColumn prefWidth="75.0" text="ID" />
-                      <TableColumn prefWidth="75.0" text="Categoria" />
-                        <TableColumn prefWidth="75.0" text="Descripcion" />
-                        <TableColumn prefWidth="75.0" text="Precio" />
-                        <TableColumn prefWidth="75.0" text="Empleado" />
-                        <TableColumn prefWidth="75.0" text="Fecha" />
+                      <TableColumn prefWidth="45.0" text="ID" />
+                      <TableColumn prefWidth="91.0" text="Categoria" />
+                        <TableColumn prefWidth="128.0" text="Descripcion" />
+                        <TableColumn prefWidth="81.0" text="Precio" />
+                        <TableColumn prefWidth="122.0" text="Empleado" />
+                        <TableColumn prefWidth="90.0" text="Fecha" />
                     </columns>
                   </TableView>
-                  <Button mnemonicParsing="false" text="Filtrar">
-                     <padding>
-                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-                     </padding>
-                     <font>
-                        <Font name="Ubuntu" size="14.0" />
-                     </font>
-                     <VBox.margin>
-                        <Insets top="2.5" />
-                     </VBox.margin>
-                  </Button>
+                  <HBox alignment="CENTER_LEFT" prefHeight="29.0" prefWidth="558.0" spacing="10.0">
+                     <children>
+                        <Button mnemonicParsing="false" text="Filtrar">
+                           <padding>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </padding>
+                           <font>
+                              <Font name="Ubuntu" size="14.0" />
+                           </font>
+                        </Button>
+                        <Button mnemonicParsing="false" text="Limpiar">
+                           <padding>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </padding>
+                        </Button>
+                     </children>
+                  </HBox>
                </children>
             </VBox>
          </content>
@@ -190,7 +209,7 @@
          <content>
             <VBox alignment="CENTER_LEFT" prefHeight="200.0" prefWidth="100.0" spacing="10.0">
                <children>
-                  <Label text="Informacion del empleado">
+                  <Label text="Filtrar por categoria">
                      <font>
                         <Font name="Ubuntu" size="16.0" />
                      </font>
@@ -200,33 +219,36 @@
                   </Label>
                   <VBox prefHeight="200.0" prefWidth="100.0" spacing="10.0" VBox.vgrow="ALWAYS">
                      <children>
-                        <Label text="Nombre" />
-                        <TextField prefHeight="26.0" prefWidth="623.0" VBox.vgrow="ALWAYS" />
+                        <Label text="Elige la categoria" />
+                        <ComboBox prefWidth="150.0" promptText="Categoria" />
                      </children>
                   </VBox>
-                  <VBox prefHeight="200.0" prefWidth="100.0" spacing="10.0" VBox.vgrow="ALWAYS">
+                  <TableView prefHeight="537.0" prefWidth="558.0" VBox.vgrow="ALWAYS">
+                    <columns>
+                      <TableColumn prefWidth="44.0" text="ID" />
+                      <TableColumn prefWidth="138.0" text="Apellido" />
+                        <TableColumn prefWidth="121.0" text="Nombre" />
+                        <TableColumn prefWidth="78.0" text="N. Tareas" />
+                        <TableColumn prefWidth="176.0" text="Fecha de Contratacion" />
+                    </columns>
+                  </TableView>
+                  <HBox alignment="CENTER_LEFT" prefHeight="30.0" prefWidth="558.0" spacing="10.0">
                      <children>
-                        <Label text="Apellido" />
-                        <TextField />
+                        <Button mnemonicParsing="false" text="Filtrar">
+                           <padding>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </padding>
+                           <font>
+                              <Font name="Ubuntu" size="14.0" />
+                           </font>
+                        </Button>
+                        <Button mnemonicParsing="false" text="Limpiar">
+                           <padding>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </padding>
+                        </Button>
                      </children>
-                  </VBox>
-                  <VBox prefHeight="200.0" prefWidth="100.0" spacing="10.0" VBox.vgrow="ALWAYS">
-                     <children>
-                        <Label text="Fecha de contratacion" />
-                        <TextField />
-                     </children>
-                  </VBox>
-                  <Button mnemonicParsing="false" text="Agregar empleado">
-                     <padding>
-                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-                     </padding>
-                     <font>
-                        <Font name="Ubuntu" size="14.0" />
-                     </font>
-                     <VBox.margin>
-                        <Insets top="2.5" />
-                     </VBox.margin>
-                  </Button>
+                  </HBox>
                </children>
             </VBox>
          </content>
