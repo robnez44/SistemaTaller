@@ -46,5 +46,10 @@ public class Empleado {
         this.id = id;
         this.fechaContratacion = fechaContratacion;
     }
+
+    @Override
+    public String toString() {
+        return nombre + " " + apellido;
+    }
 }
 
