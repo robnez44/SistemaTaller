@@ -6,6 +6,7 @@
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextArea?>
@@ -176,7 +177,8 @@
                         </VBox>
                      </children>
                   </HBox>
-                  <TableView prefHeight="287.0" prefWidth="558.0" VBox.vgrow="ALWAYS">
+                  <ListView prefHeight="234.0" prefWidth="558.0" />
+                  <!--<TableView fx:id="tbInfoTarea" prefHeight="287.0" prefWidth="558.0" VBox.vgrow="ALWAYS">
                     <columns>
                       <TableColumn prefWidth="45.0" text="ID" />
                       <TableColumn prefWidth="91.0" text="Categoria" />
@@ -185,7 +187,7 @@
                         <TableColumn prefWidth="122.0" text="Empleado" />
                         <TableColumn prefWidth="90.0" text="Fecha" />
                     </columns>
-                  </TableView>
+                  </TableView>-->
                   <HBox alignment="CENTER_LEFT" prefHeight="29.0" prefWidth="558.0" spacing="10.0">
                      <children>
                         <Button mnemonicParsing="false" text="Filtrar">

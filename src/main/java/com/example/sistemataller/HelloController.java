@@ -9,6 +9,7 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.util.Duration;
 
 import java.net.URL;
@@ -64,6 +65,27 @@ public class HelloController implements Initializable {
 
     @FXML
     private DatePicker dpFechaFin;
+
+   /* @FXML
+    private TableView<Object> tbInfoTarea;
+
+    @FXML
+    private TableColumn<Object, Integer> colID;
+
+    @FXML
+    private TableColumn<Object, String> colCategoria;
+
+    @FXML
+    private TableColumn<Object, String> colDescripcion;
+
+    @FXML
+    private TableColumn<Object, Double> colPrecio;
+
+    @FXML
+    private TableColumn<Object, String> colEmpleado;
+
+    @FXML
+    private TableColumn<Object, String> colFecha;*/
 
     private ObservableList<Categoria> categorias = FXCollections.observableArrayList();
     private ObservableList<Empleado> empleados = FXCollections.observableArrayList();
@@ -260,6 +282,9 @@ public class HelloController implements Initializable {
 
                 Statement st = conn.createStatement();
                 ResultSet rs = st.executeQuery(query);
+
+
+
             }
 
 
